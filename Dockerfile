@@ -11,4 +11,4 @@ RUN cd .. && git clone https://github.com/goplus/gop.git && cd gop && ./all.bash
 COPY . .
 # RUN cd cmd/gopcomm && nohup gop run . >backend.log 2>&1 &
 # RUN cd cmd/gopcomm/yap/community-frontend && npm install && nohup npm run dev >frontend.log 2>&1 &
-CMD gop run cmd/gopcomm
+CMD cd cmd/gopcomm && gop run .
