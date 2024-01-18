@@ -7,6 +7,9 @@ WORKDIR /community
 # install goplus
 RUN cd .. && git clone https://github.com/goplus/gop.git && cd gop && ./all.bash
 
+# install npm
+RUN apt-get install npm
+
 # run goplus-community
 COPY . .
 CMD bash scripts/start.sh
