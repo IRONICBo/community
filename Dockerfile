@@ -12,4 +12,4 @@ RUN apt-get install npm -y
 
 # run goplus-community
 COPY . .
-CMD bash scripts/start.sh
+CMD cd cmd/gopcomm && gop run .
