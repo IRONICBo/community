@@ -63,3 +63,4 @@ func (p *Community) GetUserClaim(token string) (claim *casdoorsdk.Claims, err er
 
 	return claim, nil
 }
+
