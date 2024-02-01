@@ -14,11 +14,8 @@ require (
 
 require (
 	github.com/casdoor/casdoor-go-sdk v0.35.0
-	github.com/joho/godotenv v1.5.1
 	github.com/qiniu/go-cdk-driver v0.1.0
 	github.com/qiniu/x v1.13.2
-	golang.org/x/oauth2 v0.14.0
-	go.uber.org/zap v1.26.0
 	golang.org/x/oauth2 v0.16.0
 )
 
@@ -27,7 +24,6 @@ require (
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/googleapis/gax-go/v2 v2.12.0 // indirect
-	github.com/qiniu/x v1.13.2 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/net v0.20.0 // indirect
 	golang.org/x/sync v0.5.0 // indirect
@@ -38,4 +34,5 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20231120223509-83a465c0220f // indirect
 	google.golang.org/grpc v1.59.0 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
+	github.com/joho/godotenv v1.5.1
 )
