@@ -60,6 +60,8 @@ type ASRResponse struct {
 
 type ASRTaskData Video2TextCallbackResponse
 
+type ASRTaskData Video2TextCallbackResponse
+
 // TTSRequest
 type TTSRequest struct {
 	Content string `json:"content"`
@@ -80,6 +82,40 @@ func (e *Engine) Video2Text(src string, callback string) (*ASRResponse, error) {
 
 	c := client.DefaultClient
 	res := &ASRResponse{}
+	err := c.CredentialedCallWithJson(
+		context.Background(),
+		e.qiniuCred,
+		auth.TokenQiniu,
+		&res,
+		"POST",
+		qiniuASRAPI,
+		nil,
+		requestBody,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
+}
+
+// QueryVideo2TextTask
+func (e *Engine) QueryVideo2TextTask(taskId string) (*ASRTaskData, error) {
+	// Prepare request url
+	requestURL := fmt.Sprintf("%s/%s", qiniuASRAPI, taskId)
+
+	c := client.DefaultClient
+	res := &ASRTaskData{}
+	err := c.CredentialedCallWithJson(
+		context.Background(),
+		e.qiniuCred,
+		auth.TokenQiniu,
+		&res,
+		"GET",
+		requestURL,
+		nil,
+		nil,
+	)
 	err := c.CredentialedCallWithJson(
 		context.Background(),
 		e.qiniuCred,
